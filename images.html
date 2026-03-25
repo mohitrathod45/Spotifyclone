@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Spotify Clone Images</title>
+    <style>
+        body {
+            font-family: monospace;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        .success {
+            color: #1ed760;
+        }
+        .error {
+            color: #ff4444;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎵 Spotify Clone - Image Generator</h1>
+    <p>This will generate all required images for your Spotify clone project.</p>
+    <button onclick="generateImages()" style="background:#1ed760; color:#000; padding:12px 24px; border:none; border-radius:8px; cursor:pointer; font-weight:bold;">
+        Generate All Images
+    </button>
+    <div id="output"></div>
+
+    <script>
+        function generateImages() {
+            const output = document.getElementById('output');
+            output.innerHTML = '<p>Generating images...</p>';
+            
+            // Create canvas and generate images
+            const images = [
+                { name: 'logo.png', size: 200, bg: '#1ed760', icon: '🎵', text: 'SPOTIFY' },
+                { name: 'default-cover.jpg', size: 300, bg: '#2a2a2a', icon: '🎧', text: 'MUSIC' },
+                { name: 'album-1.jpg', size: 400, bg: '#ff6b6b', icon: '✨', text: 'BLINDING LIGHTS' },
+                { name: 'album-2.jpg', size: 400, bg: '#4ecdc4', icon: '💫', text: 'LEVITATING' },
+                { name: 'album-3.jpg', size: 400, bg: '#45b7d1', icon: '🌟', text: 'STAY' },
+                { name: 'album-4.jpg', size: 400, bg: '#96ceb4', icon: '🎸', text: 'AS IT WAS' },
+                { name: 'album-5.jpg', size: 400, bg: '#f4d03f', icon: '🌸', text: 'FLOWERS' },
+                { name: 'album-6.jpg', size: 400, bg: '#e67e22', icon: '🌞', text: 'CRUEL SUMMER' }
+            ];
+            
+            images.forEach(img => {
+                const canvas = document.createElement('canvas');
+                canvas.width = img.size;
+                canvas.height = img.size;
+                const ctx = canvas.getContext('2d');
+                
+                // Background
+                ctx.fillStyle = img.bg;
+                ctx.fillRect(0, 0, img.size, img.size);
+                
+                // Gradient overlay
+                const gradient = ctx.createLinearGradient(0, 0, img.size, img.size);
+                gradient.addColorStop(0, 'rgba(0,0,0,0.2)');
+                gradient.addColorStop(1, 'rgba(0,0,0,0.4)');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, img.size, img.size);
+                
+                // Draw icon/emoji
+                ctx.font = `${img.size * 0.3}px Arial`;
+                ctx.fillStyle = '#ffffff';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(img.icon, img.size/2, img.size/2 - 20);
+                
+                // Draw text
+                ctx.font = `bold ${img.size * 0.08}px Arial`;
+                ctx.fillStyle = '#ffffff';
+                ctx.fillText(img.text, img.size/2, img.size/2 + 60);
+                
+                // Add circle pattern
+                ctx.beginPath();
+                ctx.arc(img.size - 30, img.size - 30, 40, 0, 2 * Math.PI);
+                ctx.fillStyle = 'rgba(255,255,255,0.1)';
+                ctx.fill();
+                
+                // Download the image
+                const link = document.createElement('a');
+                link.download = img.name;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+                
+                output.innerHTML += `<p class="success">✅ Generated: ${img.name}</p>`;
+            });
+            
+            output.innerHTML += '<p class="success">✨ All images generated! Check your downloads folder.</p>';
+            output.innerHTML += '<p>📁 Move these images to: <strong>assets/images/</strong> folder</p>';
+        }
+    </script>
+</body>
+</html>
