@@ -1,6 +1,13 @@
 // ========= MUSIC LIBRARY WITH LOCAL FILES =========
 const tracks = [
     {
+        name: "Dooron Dooron",
+        artist: "Paresh Pahuja",
+        src: "assets/songs/song-3.mp3.mp3",
+        cover: "assets/images/album-3.jpg.png",
+        duration: "5:32"
+    },
+    {
         name: "Blinding Lights",
         artist: "The Weeknd",
         src: "assets/songs/song-1.mp3",
@@ -12,8 +19,15 @@ const tracks = [
         artist: "Haryanvi",
         src: "assets/songs/song-1.mp3",
         cover: "assets/images/album-7.jpg",
-        duration: "2.29"
+        duration: "2.30"
     },  
+    {
+        name: "Shararat",
+        artist: "Jasmine Sandlas",
+        src: "assets/songs/song-2.mp3",
+        cover: "assets/images/album-2.jpg.jpg",
+        duration: "3.44"
+    },
     {
         name: "Levitating",
         artist: "Dua Lipa",

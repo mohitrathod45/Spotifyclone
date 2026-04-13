@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="./assets/images/spotify-logo.png"> <!--To in top chrome tab*!-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Spotify Clone | Premium Music Player</title>
+    <title>Spoti-Clone | Premium Music Player</title>
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Google Fonts -->
@@ -438,12 +439,12 @@
         }
         .play-pause {
             background: #1ed760;
-            color: black;
+            color: rgb(245, 236, 236);
             width: 48px;
             height: 48px;
         }
         .play-pause i {
-            color: black;
+            color: rgb(241, 235, 235);
             font-size: 1.3rem;
         }
         .play-pause:hover {
@@ -631,7 +632,7 @@
         
         <div class="hero-section">
             <div class="greeting">
-                <h1>Good evening</h1>
+                <h1>Good Vibes</h1>
                 <p>Your vibe, your music — infinite streaming</p>
             </div>
         </div>
@@ -658,7 +659,7 @@
         </div>
         <div class="track-details">
             <h4 id="currentSongTitle">Select a track</h4>
-            <p id="currentArtist">Spotify Clone</p>
+            <p id="currentArtist">Spoti Clone</p>
         </div>
     </div>
     <div class="player-controls">
@@ -687,6 +688,13 @@
     // ========= MUSIC LIBRARY WITH PLACEHOLDER AUDIO =========
     const tracks = [
         {
+            name: "Dooron Dooron",
+            artist: "Paresh Pahuja",
+            src: "assets/songs/song-3.mp3.mp3",
+            cover: "assets/images/album-3.jpg.png",
+            color: "#5hget4"
+        },
+        {
             name: "Blinding Lights",
             artist: "The Weeknd",
             src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
@@ -696,9 +704,16 @@
         {
             name: "Bairan",
             artist: "Haryanvi",
-            src: "assets\songs\song-1.mp3",
+            src: "assets/songs/song-1.mp3.mp3",
             cover: "assets/images/album-7.jpg",
             color: "#98cbc2"
+        },
+        {
+            name: "Shararat",
+            artist: "Jasmine Sandlas",
+            src: "assets/songs/song-2.mp3.mp3",
+            cover: "assets/images/album-2.jpg.jpg",
+            color: "#huet5e"
         },
         {
             name: "Levitating",
